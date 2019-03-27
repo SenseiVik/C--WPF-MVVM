@@ -1,0 +1,1 @@
+If you want check project working with MS SQL Database go to MS SQL Database directory and execute Query.

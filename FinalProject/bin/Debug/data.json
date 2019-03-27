@@ -1,18 +1,7 @@
 {
   "Cars": [
     {
-      "Title": "None",
-      "Color": "None",
-      "Volume": 0.0,
-      "Year": 0,
-      "Price": 0,
-      "Transmission": 0,
-      "Drive": 1,
-      "Body": 2,
-      "Image": "..\\Icon\\car.png"
-    },
-    {
-      "Title": "Honda HR-V",
+      "Title": "Honda CR-V",
       "Color": "red",
       "Volume": 2.0,
       "Year": 2018,
@@ -32,6 +21,17 @@
       "Drive": 0,
       "Body": 0,
       "Image": "..\\Image\\hondaAccord.jpg"
+    },
+    {
+      "Title": "Honda",
+      "Color": "White",
+      "Volume": 2.5,
+      "Year": 2014,
+      "Price": 3000,
+      "Transmission": 0,
+      "Drive": 0,
+      "Body": 3,
+      "Image": "D:\\1.jpg"
     }
   ],
   "LightTheme": false,

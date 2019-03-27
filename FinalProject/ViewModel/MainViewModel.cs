@@ -44,7 +44,7 @@ namespace FinalProject.ViewModel
             ChangeLanguageCommand = new RelayCommand(ChangeLanguageMethod);
             ChangeThemeCommand = new RelayCommand(ChangeThemeMethod);
             AppendCarCommand = new RelayCommand(AppendCarMethod);
-            EditCarCommand = new RelayCommand(EditCarMethod);
+            EditCarCommand = new RelayCommand(EditCarMethod, x => SelectedCar != null);
             SortCommand = new RelayCommand(SortMethod);
             SaveCommand = new RelayCommand(SaveMethod);
             LoadCommand = new RelayCommand(LoadMethod);
@@ -74,7 +74,7 @@ namespace FinalProject.ViewModel
         private void SaveMethod(object obj)
         {
             Config.Cars = Cars;
-            logger.Save("data" ,Config);
+            logger.Save("data", Config);
         }
 
 
@@ -132,17 +132,14 @@ namespace FinalProject.ViewModel
 
             ResourceDictionary[] dict = new ResourceDictionary[0];
 
-            if (theme)
-                dict = Theme.GetLightTheme();
-            else
-                dict = Theme.GetDarkTheme();
+            dict = theme ? Theme.GetLightTheme() : Theme.GetDarkTheme();
 
             App.Current.Resources.MergedDictionaries.Clear();
 
             foreach (var elem in dict)
+            {
                 App.Current.Resources.MergedDictionaries.Add(elem);
-
-            
+            }
         }
 
         private void AppendCarMethod(object parameter)
@@ -171,7 +168,7 @@ namespace FinalProject.ViewModel
         {
             int index = Convert.ToInt32(parameter);
 
-            switch(index)
+            switch (index)
             {
                 case 0:
                     Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Title));
@@ -222,6 +219,7 @@ namespace FinalProject.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

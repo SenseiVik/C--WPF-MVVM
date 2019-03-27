@@ -32,8 +32,6 @@ namespace FinalProject.ViewModel
         public CarViewModel()
         {
             Car = Transfer.SelectedCar.Clone() as Car;
-            //Car = new Car();
-            //Transfer.Copy(Transfer.SelectedCar, Car);
 
             CancelCommand = new RelayCommand(CancelMethod);
             OkCommand = new RelayCommand(OkMethod);
