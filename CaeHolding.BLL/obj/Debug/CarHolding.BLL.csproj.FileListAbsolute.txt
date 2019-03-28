@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CaeHolding.BLL.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CaeHolding.BLL.pdb
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.pdb
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.dll.config
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CopyComplete
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.pdb

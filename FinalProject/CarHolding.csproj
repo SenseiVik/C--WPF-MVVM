@@ -102,21 +102,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Infrastructure\Types\BodyType.cs" />
     <Compile Include="Infrastructure\ComboBoxEnum.cs" />
     <Compile Include="Infrastructure\DImodule.cs" />
-    <Compile Include="Infrastructure\Types\DriveType.cs" />
     <Compile Include="Infrastructure\LanguageManager.cs" />
     <Compile Include="Infrastructure\MainViewModelLocator.cs" />
     <Compile Include="Infrastructure\ProgramConfig.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="Infrastructure\Transfer.cs" />
     <Compile Include="Infrastructure\Theme.cs" />
-    <Compile Include="Infrastructure\Types\TransmissionType.cs" />
     <Compile Include="Infrastructure\Validator\DoubleValidatorRule.cs" />
     <Compile Include="Infrastructure\Validator\ColorValidatorRule.cs" />
     <Compile Include="Infrastructure\Validator\IntegerValidatorRule.cs" />
-    <Compile Include="Model\Car.cs" />
     <Compile Include="Model\ILogger.cs" />
     <Compile Include="Model\JSONLogger.cs" />
     <Compile Include="Model\XMLogger.cs" />
@@ -195,6 +191,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaeHolding.BLL\CarHolding.BLL.csproj">
+      <Project>{57678f97-7c01-487f-8309-a782578d9b38}</Project>
+      <Name>CarHolding.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarHolding.DAL\CarHolding.DAL.csproj">
+      <Project>{94b0b82e-b50b-4c4b-97ed-109b40f1a45b}</Project>
+      <Name>CarHolding.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

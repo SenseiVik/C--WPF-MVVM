@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarHolding", "FinalProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarHolding.DAL", "CarHolding.DAL\CarHolding.DAL.csproj", "{94B0B82E-B50B-4C4B-97ED-109B40F1A45B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarHolding.BLL", "CaeHolding.BLL\CarHolding.BLL.csproj", "{57678F97-7C01-487F-8309-A782578D9B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94B0B82E-B50B-4C4B-97ED-109B40F1A45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94B0B82E-B50B-4C4B-97ED-109B40F1A45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B0B82E-B50B-4C4B-97ED-109B40F1A45B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57678F97-7C01-487F-8309-A782578D9B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57678F97-7C01-487F-8309-A782578D9B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57678F97-7C01-487F-8309-A782578D9B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57678F97-7C01-487F-8309-A782578D9B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

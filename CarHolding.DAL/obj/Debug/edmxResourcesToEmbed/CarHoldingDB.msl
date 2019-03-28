@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarHoldingModelStoreContainer" CdmEntityContainer="CarHoldingEntities">
+    <EntitySetMapping Name="BodyTypes">
+      <EntityTypeMapping TypeName="CarHoldingModel.BodyType">
+        <MappingFragment StoreEntitySet="BodyType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BodyType1" ColumnName="BodyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="CarHoldingModel.Car">
+        <MappingFragment StoreEntitySet="Car">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="TransmissionTypeId" ColumnName="TransmissionTypeId" />
+          <ScalarProperty Name="DriveTypeId" ColumnName="DriveTypeId" />
+          <ScalarProperty Name="BodyTypeId" ColumnName="BodyTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriveTypes">
+      <EntityTypeMapping TypeName="CarHoldingModel.DriveType">
+        <MappingFragment StoreEntitySet="DriveType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DriveType1" ColumnName="DriveType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransmissionTypes">
+      <EntityTypeMapping TypeName="CarHoldingModel.TransmissionType">
+        <MappingFragment StoreEntitySet="TransmissionType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TransmissionType1" ColumnName="TransmissionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

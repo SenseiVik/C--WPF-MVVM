@@ -74,7 +74,14 @@
     <Compile Include="DriveType.cs">
       <DependentUpon>CarHoldingDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BodyTypeRepository.cs" />
+    <Compile Include="Repositories\CarRepository.cs" />
+    <Compile Include="Repositories\DriveTypeRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\EFUnitOfWork.cs" />
+    <Compile Include="Repositories\TransmissionTypeRepository.cs" />
     <Compile Include="TransmissionType.cs">
       <DependentUpon>CarHoldingDB.tt</DependentUpon>
     </Compile>
