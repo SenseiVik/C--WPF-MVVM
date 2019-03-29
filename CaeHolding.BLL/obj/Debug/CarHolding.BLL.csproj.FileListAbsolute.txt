@@ -10,3 +10,15 @@ C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.cspro
 C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CopyComplete
 C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.dll
 C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.pdb
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CaeHolding.BLL.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CaeHolding.BLL.pdb
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.pdb
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\CarHolding.DAL.dll.config
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csprojAssemblyReference.cache
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CopyComplete
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.pdb

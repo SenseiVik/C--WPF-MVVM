@@ -1,4 +1,7 @@
-﻿using FinalProject.Infrastructure;
+﻿using CaeHolding.BLL.Interfaces;
+using CaeHolding.BLL.Services;
+using CarHolding.BLL.DTO;
+using FinalProject.Infrastructure;
 using FinalProject.Model;
 using FinalProject.View;
 using System;
@@ -18,11 +21,12 @@ namespace FinalProject.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<Car> cars;
-        private Car selectedCar;
+        private ObservableCollection<CarDTO> cars;
+        private CarDTO selectedCar;
         private ProgramConfig config;
         private Dictionary<string, string> language;
         private ILogger logger;
+        private IService<CarDTO> service;
 
         #region Commands
         public ICommand LoadCommand { get; set; }
@@ -39,6 +43,7 @@ namespace FinalProject.ViewModel
         public MainViewModel(ILogger logger)
         {
             this.logger = logger;
+            this.service = new MsSqlServerService();
 
             RemoveCommand = new RelayCommand(x => Cars.Remove(SelectedCar), x => SelectedCar != null);
             ChangeLanguageCommand = new RelayCommand(ChangeLanguageMethod);
@@ -52,23 +57,29 @@ namespace FinalProject.ViewModel
 
         private void LoadMethod(object obj)
         {
-            ProgramConfig res = logger.Load("data");
+            //ProgramConfig res = logger.Load("data");
 
-            if (res != null)
-            {
-                Config = res;
-                ChangeLanguageMethod(Config.Language);
-                ChangeThemeMethod(Config.LightTheme);
-                Cars = Config.Cars;
-            }
-            else
-            {
-                Cars = Car.GetCars();
-                Language = LanguageManager.GetDictionaryEnglish();
-                Config = new ProgramConfig();
-                Config.Language = "ENG";
-                Config.LightTheme = true;
-            }
+            //if (res != null)
+            //{
+            //    Config = res;
+            //    ChangeLanguageMethod(Config.Language);
+            //    ChangeThemeMethod(Config.LightTheme);
+            //    Cars = Config.Cars;
+            //}
+            //else
+            //{
+            //    //Cars = CarDTO.GetCars();
+            //    Language = LanguageManager.GetDictionaryEnglish();
+            //    Config = new ProgramConfig();
+            //    Config.Language = "ENG";
+            //    Config.LightTheme = true;
+            //}
+
+            Cars = new ObservableCollection<CarDTO>(service.GetAll());
+            Language = LanguageManager.GetDictionaryEnglish();
+            Config = new ProgramConfig();
+            Config.Language = "ENG";
+            Config.LightTheme = true;
         }
 
         private void SaveMethod(object obj)
@@ -102,7 +113,7 @@ namespace FinalProject.ViewModel
             }
         }
 
-        public ObservableCollection<Car> Cars
+        public ObservableCollection<CarDTO> Cars
         {
             get => cars;
             set
@@ -112,7 +123,7 @@ namespace FinalProject.ViewModel
             }
         }
 
-        public Car SelectedCar
+        public CarDTO SelectedCar
         {
             get => selectedCar;
             set
@@ -144,7 +155,7 @@ namespace FinalProject.ViewModel
 
         private void AppendCarMethod(object parameter)
         {
-            Transfer.SelectedCar = new Car();
+            Transfer.SelectedCar = new CarDTO();
             Transfer.Cars = Cars;
             Transfer.Append = true;
 
@@ -171,28 +182,28 @@ namespace FinalProject.ViewModel
             switch (index)
             {
                 case 0:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Title));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Title));
                     break;
                 case 1:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Volume));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Volume));
                     break;
                 case 2:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Color));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Color));
                     break;
                 case 3:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Year));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Year));
                     break;
                 case 4:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Price));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Price));
                     break;
                 case 5:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Transmission));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Transmission));
                     break;
                 case 6:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Drive));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Drive));
                     break;
                 case 7:
-                    Cars = new ObservableCollection<Car>(Cars.OrderBy(x => x.Body));
+                    Cars = new ObservableCollection<CarDTO>(Cars.OrderBy(x => x.Body));
                     break;
             }
         }

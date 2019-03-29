@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarHolding.DAL.Interfaces
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         IRepository<Car> Cars { get; }
         IRepository<BodyType> BodyTypes { get; }

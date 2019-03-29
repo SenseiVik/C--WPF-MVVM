@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarHolding.DAL.Repositories
 {
-    class TransmissionTypeRepository : IRepository<TransmissionType>
+    public class TransmissionTypeRepository : IRepository<TransmissionType>
     {
         CarHoldingEntities db;
 

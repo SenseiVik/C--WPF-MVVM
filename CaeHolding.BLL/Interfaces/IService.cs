@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaeHolding.BLL.Interfaces
 {
-    interface IService<T>
+    public interface IService<T>
     {
         IEnumerable<T> GetAll();
         T Get(int id);

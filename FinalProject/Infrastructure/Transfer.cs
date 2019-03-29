@@ -1,4 +1,5 @@
-﻿using FinalProject.Model;
+﻿using CarHolding.BLL.DTO;
+using FinalProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,10 +12,10 @@ namespace FinalProject.Infrastructure
     public static class Transfer
     {
         public static bool Append { get; set; }
-        public static Car SelectedCar { get; set; }
-        public static ObservableCollection<Car> Cars { get; set; }
+        public static CarDTO SelectedCar { get; set; }
+        public static ObservableCollection<CarDTO> Cars { get; set; }
 
-        public static void Copy(Car from, Car to)
+        public static void Copy(CarDTO from, CarDTO to)
         {
             to.Title = from.Title;
             to.Volume = from.Volume;
