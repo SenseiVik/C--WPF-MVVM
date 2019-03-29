@@ -1,4 +1,5 @@
-﻿using FinalProject.Model;
+﻿using CarHolding.BLL.DTO;
+using FinalProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +12,7 @@ namespace FinalProject.Infrastructure
 {
     public class ProgramConfig
     {
-        public ObservableCollection<Car> Cars { get; set; }
+        public ObservableCollection<CarDTO> Cars { get; set; }
         public bool LightTheme { get; set; }
         public int LanguageIndex { get; set; }
         public string Language { get; set; }

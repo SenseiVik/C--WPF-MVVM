@@ -1,4 +1,5 @@
-﻿using FinalProject.Infrastructure;
+﻿using CarHolding.BLL.DTO;
+using FinalProject.Infrastructure;
 using FinalProject.Model;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace FinalProject.ViewModel
 {
     public class CarViewModel : INotifyPropertyChanged
     {
-        private Car car;
+        private CarDTO car;
 
         public ICommand OkCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
-        public Car Car
+        public CarDTO Car
         {
             get => car;
             set
@@ -31,7 +32,7 @@ namespace FinalProject.ViewModel
 
         public CarViewModel()
         {
-            Car = Transfer.SelectedCar.Clone() as Car;
+            Car = Transfer.SelectedCar.Clone() as CarDTO;
 
             CancelCommand = new RelayCommand(UserCancel);
             OkCommand = new RelayCommand(UserConfirm);

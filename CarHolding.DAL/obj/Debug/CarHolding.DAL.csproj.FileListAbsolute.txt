@@ -10,3 +10,15 @@ C:\Users\Admin\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.cspro
 C:\Users\Admin\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.csproj.CopyComplete
 C:\Users\Admin\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.dll
 C:\Users\Admin\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.pdb
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\CarHolding.DAL.dll.config
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\CarHolding.DAL.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\CarHolding.DAL.pdb
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.csprojAssemblyReference.cache
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.csproj.CopyComplete
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.dll
+C:\Users\Сирик\Desktop\C--WPF-MVVM\CarHolding.DAL\obj\Debug\CarHolding.DAL.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarHolding.DAL.Repositories
 {
-    class EFUnitOfWork : IUnitOfWork
+    public class EFUnitOfWork : IUnitOfWork
     {
         private CarHoldingEntities db;
         private IRepository<Car> cars;
