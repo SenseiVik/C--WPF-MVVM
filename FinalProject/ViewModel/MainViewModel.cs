@@ -45,7 +45,7 @@ namespace FinalProject.ViewModel
             this.logger = logger;
             this.service = new MsSqlServerService();
 
-            RemoveCommand = new RelayCommand(x => Cars.Remove(SelectedCar), x => SelectedCar != null);
+            RemoveCommand = new RelayCommand(RemoveMethod, x => SelectedCar != null);
             ChangeLanguageCommand = new RelayCommand(ChangeLanguageMethod);
             ChangeThemeCommand = new RelayCommand(ChangeThemeMethod);
             AppendCarCommand = new RelayCommand(AppendCarMethod);
@@ -134,6 +134,15 @@ namespace FinalProject.ViewModel
         }
 
         #endregion
+
+
+        private void RemoveMethod(object obj)
+        {
+            service.Remove(SelectedCar);
+            service.SaveChanges();
+            Cars.Remove(SelectedCar);
+        }
+
 
         private void ChangeThemeMethod(object parameter)
         {

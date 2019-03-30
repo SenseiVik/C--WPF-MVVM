@@ -33,7 +33,8 @@ namespace CaeHolding.BLL.Services
         {
             return unitOfWork.Cars
                                 .GetAll()
-                                    .Select(x => new CarDTO(x.Title, 
+                                    .Select(x => new CarDTO(x.Id,
+                                                            x.Title, 
                                                             x.Volume, 
                                                             x.Year, 
                                                             x.Price, 
@@ -41,7 +42,8 @@ namespace CaeHolding.BLL.Services
                                                             x.TransmissionType.TransmissionType1, 
                                                             x.DriveType.DriveType1, 
                                                             x.BodyType.BodyType1, 
-                                                            x.ImagePath));
+                                                            x.ImagePath)).ToList();
+            
         }
 
         public CarDTO GetAt(int index)
@@ -51,7 +53,12 @@ namespace CaeHolding.BLL.Services
 
         public void Remove(CarDTO value)
         {
-            throw new NotImplementedException();
+            var tmp = unitOfWork.Cars.Get(value.Id);
+
+            if (tmp != null)
+            {
+                unitOfWork.Cars.Remove(tmp);
+            }
         }
 
         public void RemoveAt(int index)
@@ -61,7 +68,7 @@ namespace CaeHolding.BLL.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            unitOfWork.SaveChanges();
         }
     }
 }

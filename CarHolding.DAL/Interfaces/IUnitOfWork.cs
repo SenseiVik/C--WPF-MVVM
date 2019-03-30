@@ -13,6 +13,6 @@ namespace CarHolding.DAL.Interfaces
         IRepository<DriveType> DriveTypes { get; }
         IRepository<TransmissionType> TransmissionTypes { get; }
 
-        void Save();
+        void SaveChanges();
     }
 }

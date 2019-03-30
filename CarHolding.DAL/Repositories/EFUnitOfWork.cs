@@ -27,11 +27,11 @@ namespace CarHolding.DAL.Repositories
         public IRepository<BodyType> BodyTypes => bodyTypes = bodyTypes ?? new BodyTypeRepository(db);
         public IRepository<DriveType> DriveTypes => driveTypes = driveTypes ?? new DriveTypeRepository(db);
         public IRepository<TransmissionType> TransmissionTypes => transmissionType = transmissionType ?? new TransmissionTypeRepository(db);
+        #endregion
 
-        public void Save()
+        public void SaveChanges()
         {
             db.SaveChanges();
         }
-        #endregion
     }
 }

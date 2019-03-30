@@ -24,7 +24,8 @@ namespace CarHolding.BLL.DTO
         private string image;
 
         #region Constructor
-        public CarDTO( string title, 
+        public CarDTO( int id,
+                    string title, 
                     double volume, 
                     int year, 
                     int price, 
@@ -34,6 +35,7 @@ namespace CarHolding.BLL.DTO
                     string body,
                     string image)
         {
+            this.id = id;
             this.title = title;
             this.volume = volume;
             this.year = year;
