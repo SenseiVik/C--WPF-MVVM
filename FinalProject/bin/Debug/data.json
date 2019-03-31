@@ -1,18 +1,6 @@
 {
   "Cars": [
     {
-      "Title": "Honda Accord",
-      "Color": "Black",
-      "Volume": 2.4,
-      "Year": 2011,
-      "Price": 24000,
-      "Transmission": 1,
-      "Drive": 0,
-      "Body": 0,
-      "Image": "..\\Image\\hondaAccord.jpg",
-      "Id": 0
-    },
-    {
       "Title": "Honda HR-V",
       "Color": "DarkRed",
       "Volume": 3.2,
@@ -22,7 +10,7 @@
       "Drive": 2,
       "Body": 6,
       "Image": "..\\Image\\hondaHRV.jpg",
-      "Id": 0
+      "Id": 2
     },
     {
       "Title": "Honda Civic",
@@ -34,7 +22,7 @@
       "Drive": 0,
       "Body": 2,
       "Image": "..\\Image\\hondaCivic.jpg",
-      "Id": 0
+      "Id": 3
     }
   ],
   "LightTheme": true,
