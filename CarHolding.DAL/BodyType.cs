@@ -17,13 +17,13 @@ namespace CarHolding.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BodyType()
         {
-            this.Cars = new HashSet<Car>();
+            this.Car = new HashSet<Car>();
         }
     
         public int Id { get; set; }
         public string BodyType1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<Car> Car { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CarHoldingModelStoreContainer" CdmEntityContainer="CarHoldingEntities">
-    <EntitySetMapping Name="BodyTypes">
+    <EntitySetMapping Name="BodyType">
       <EntityTypeMapping TypeName="CarHoldingModel.BodyType">
         <MappingFragment StoreEntitySet="BodyType">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -9,7 +9,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cars">
+    <EntitySetMapping Name="Car">
       <EntityTypeMapping TypeName="CarHoldingModel.Car">
         <MappingFragment StoreEntitySet="Car">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -25,7 +25,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DriveTypes">
+    <EntitySetMapping Name="DriveType">
       <EntityTypeMapping TypeName="CarHoldingModel.DriveType">
         <MappingFragment StoreEntitySet="DriveType">
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -33,7 +33,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TransmissionTypes">
+    <EntitySetMapping Name="ProgramConfig">
+      <EntityTypeMapping TypeName="CarHoldingModel.ProgramConfig">
+        <MappingFragment StoreEntitySet="ProgramConfig">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LightTheme" ColumnName="LightTheme" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransmissionType">
       <EntityTypeMapping TypeName="CarHoldingModel.TransmissionType">
         <MappingFragment StoreEntitySet="TransmissionType">
           <ScalarProperty Name="Id" ColumnName="Id" />

@@ -1,4 +1,5 @@
 ﻿using CarHolding.DAL.Interfaces;
+using CarHolding.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -19,17 +20,17 @@ namespace CarHolding.DAL.Repositories
 
         ~DriveTypeRepository() => db.Dispose();
 
-        public void CreateOrUpdate(DriveType value) => db.DriveTypes.AddOrUpdate(value);
+        public void CreateOrUpdate(DriveType value) => db.DriveType.AddOrUpdate(value);
 
-        public DriveType Get(int id) => db.DriveTypes.Find(id);
+        public DriveType Get(int id) => db.DriveType.Find(id);
 
-        public IEnumerable<DriveType> GetAll() => db.DriveTypes;
+        public IEnumerable<DriveType> GetAll() => db.DriveType;
 
         public DriveType GetAt(int index)
         {
             try
             {
-                return db.DriveTypes.ToList()[index];
+                return db.DriveType.ToList()[index];
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -37,13 +38,13 @@ namespace CarHolding.DAL.Repositories
             }
         }
 
-        public void Remove(DriveType value) => db.DriveTypes.Remove(value);
+        public void Remove(DriveType value) => db.DriveType.Remove(value);
 
         public void RemoveAt(int index)
         {
             try
             {
-                db.DriveTypes.ToList().RemoveAt(index);
+                db.DriveType.ToList().RemoveAt(index);
             }
             catch { }
         }

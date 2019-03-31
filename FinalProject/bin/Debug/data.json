@@ -6,9 +6,9 @@
       "Volume": 3.2,
       "Year": 2018,
       "Price": 34000,
-      "Transmission": 0,
-      "Drive": 2,
-      "Body": 6,
+      "Transmission": 1,
+      "Drive": 3,
+      "Body": 7,
       "Image": "..\\Image\\hondaHRV.jpg",
       "Id": 2
     },
@@ -17,15 +17,26 @@
       "Color": "Green",
       "Volume": 2.0,
       "Year": 2017,
-      "Price": 27000,
-      "Transmission": 1,
-      "Drive": 0,
-      "Body": 2,
+      "Price": 43000,
+      "Transmission": 2,
+      "Drive": 1,
+      "Body": 3,
       "Image": "..\\Image\\hondaCivic.jpg",
       "Id": 3
+    },
+    {
+      "Title": "Honda Bayan",
+      "Color": "Black",
+      "Volume": 2.4,
+      "Year": 2011,
+      "Price": 24000,
+      "Transmission": 2,
+      "Drive": 1,
+      "Body": 1,
+      "Image": "..\\Image\\hondaAccord.jpg",
+      "Id": 9
     }
   ],
   "LightTheme": true,
-  "LanguageIndex": 0,
   "Language": "ENG"
 }

@@ -12,7 +12,7 @@ namespace FinalProject.Infrastructure
     public static class Transfer
     {
         public static bool Append { get; set; }
-        public static CarDTO SelectedCar { get; set; }
+        public static CarDTO Car { get; set; }
         public static ObservableCollection<CarDTO> Cars { get; set; }
 
         public static void Copy(CarDTO from, CarDTO to)

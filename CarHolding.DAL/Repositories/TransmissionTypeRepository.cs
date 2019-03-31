@@ -19,17 +19,17 @@ namespace CarHolding.DAL.Repositories
 
         ~TransmissionTypeRepository() => db.Dispose();
 
-        public void CreateOrUpdate(TransmissionType value) => db.TransmissionTypes.AddOrUpdate(value);
+        public void CreateOrUpdate(TransmissionType value) => db.TransmissionType.AddOrUpdate(value);
 
-        public TransmissionType Get(int id) => db.TransmissionTypes.Find(id);
+        public TransmissionType Get(int id) => db.TransmissionType.Find(id);
 
-        public IEnumerable<TransmissionType> GetAll() => db.TransmissionTypes;
+        public IEnumerable<TransmissionType> GetAll() => db.TransmissionType;
 
         public TransmissionType GetAt(int index)
         {
             try
             {
-                return db.TransmissionTypes.ToList()[index];
+                return db.TransmissionType.ToList()[index];
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -37,13 +37,13 @@ namespace CarHolding.DAL.Repositories
             }
         }
 
-        public void Remove(TransmissionType value) => db.TransmissionTypes.Remove(value);
+        public void Remove(TransmissionType value) => db.TransmissionType.Remove(value);
 
         public void RemoveAt(int index)
         {
             try
             {
-                db.TransmissionTypes.ToList().RemoveAt(index);
+                db.TransmissionType.ToList().RemoveAt(index);
             }
             catch { }
         }

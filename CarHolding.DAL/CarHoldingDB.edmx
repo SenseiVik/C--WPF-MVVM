@@ -34,6 +34,14 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DriveType" Type="varchar" MaxLength="45" />
         </EntityType>
+        <EntityType Name="ProgramConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LightTheme" Type="bit" Nullable="false" />
+          <Property Name="Language" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="TransmissionType">
           <Key>
             <PropertyRef Name="Id" />
@@ -81,6 +89,7 @@
           <EntitySet Name="BodyType" EntityType="Self.BodyType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DriveType" EntityType="Self.DriveType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgramConfig" EntityType="Self.ProgramConfig" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CarBodyType" Association="Self.FK_CarBodyType">
             <End Role="BodyType" EntitySet="BodyType" />
@@ -106,7 +115,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BodyType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Cars" Relationship="Self.FK_CarBodyType" FromRole="BodyType" ToRole="Car" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_CarBodyType" FromRole="BodyType" ToRole="Car" />
         </EntityType>
         <EntityType Name="Car">
           <Key>
@@ -132,7 +141,15 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DriveType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Cars" Relationship="Self.FK_CarDriveType" FromRole="DriveType" ToRole="Car" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_CarDriveType" FromRole="DriveType" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="ProgramConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LightTheme" Type="Boolean" Nullable="false" />
+          <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="TransmissionType">
           <Key>
@@ -140,7 +157,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TransmissionType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Cars" Relationship="Self.FK_CarTransmissionType" FromRole="TransmissionType" ToRole="Car" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_CarTransmissionType" FromRole="TransmissionType" ToRole="Car" />
         </EntityType>
         <Association Name="FK_CarBodyType">
           <End Role="BodyType" Type="Self.BodyType" Multiplicity="1" />
@@ -179,21 +196,22 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CarHoldingEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BodyTypes" EntityType="Self.BodyType" />
-          <EntitySet Name="Cars" EntityType="Self.Car" />
-          <EntitySet Name="DriveTypes" EntityType="Self.DriveType" />
-          <EntitySet Name="TransmissionTypes" EntityType="Self.TransmissionType" />
+          <EntitySet Name="BodyType" EntityType="Self.BodyType" />
+          <EntitySet Name="Car" EntityType="Self.Car" />
+          <EntitySet Name="DriveType" EntityType="Self.DriveType" />
+          <EntitySet Name="ProgramConfig" EntityType="Self.ProgramConfig" />
+          <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" />
           <AssociationSet Name="FK_CarBodyType" Association="Self.FK_CarBodyType">
-            <End Role="BodyType" EntitySet="BodyTypes" />
-            <End Role="Car" EntitySet="Cars" />
+            <End Role="BodyType" EntitySet="BodyType" />
+            <End Role="Car" EntitySet="Car" />
           </AssociationSet>
           <AssociationSet Name="FK_CarDriveType" Association="Self.FK_CarDriveType">
-            <End Role="DriveType" EntitySet="DriveTypes" />
-            <End Role="Car" EntitySet="Cars" />
+            <End Role="DriveType" EntitySet="DriveType" />
+            <End Role="Car" EntitySet="Car" />
           </AssociationSet>
           <AssociationSet Name="FK_CarTransmissionType" Association="Self.FK_CarTransmissionType">
-            <End Role="TransmissionType" EntitySet="TransmissionTypes" />
-            <End Role="Car" EntitySet="Cars" />
+            <End Role="TransmissionType" EntitySet="TransmissionType" />
+            <End Role="Car" EntitySet="Car" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -202,7 +220,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CarHoldingModelStoreContainer" CdmEntityContainer="CarHoldingEntities">
-          <EntitySetMapping Name="BodyTypes">
+          <EntitySetMapping Name="BodyType">
             <EntityTypeMapping TypeName="CarHoldingModel.BodyType">
               <MappingFragment StoreEntitySet="BodyType">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -210,7 +228,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cars">
+          <EntitySetMapping Name="Car">
             <EntityTypeMapping TypeName="CarHoldingModel.Car">
               <MappingFragment StoreEntitySet="Car">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -226,7 +244,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DriveTypes">
+          <EntitySetMapping Name="DriveType">
             <EntityTypeMapping TypeName="CarHoldingModel.DriveType">
               <MappingFragment StoreEntitySet="DriveType">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -234,7 +252,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TransmissionTypes">
+          <EntitySetMapping Name="ProgramConfig">
+            <EntityTypeMapping TypeName="CarHoldingModel.ProgramConfig">
+              <MappingFragment StoreEntitySet="ProgramConfig">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LightTheme" ColumnName="LightTheme" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransmissionType">
             <EntityTypeMapping TypeName="CarHoldingModel.TransmissionType">
               <MappingFragment StoreEntitySet="TransmissionType">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -256,7 +283,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

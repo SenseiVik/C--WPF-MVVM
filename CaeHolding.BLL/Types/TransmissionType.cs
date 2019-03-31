@@ -8,7 +8,7 @@ namespace CarHolding.BLL.Types
 {
     public enum TransmissionType
     {
-        Automatic,
+        Automatic = 1,
         Manual
     }
 }

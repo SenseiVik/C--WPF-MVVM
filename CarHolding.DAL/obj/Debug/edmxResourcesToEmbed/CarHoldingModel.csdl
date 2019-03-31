@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarHoldingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BodyType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BodyType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarBodyType" FromRole="BodyType" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Volume" Type="Double" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransmissionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DriveTypeId" Type="Int32" Nullable="false" />
+    <Property Name="BodyTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BodyType" Relationship="Self.FK_CarBodyType" FromRole="Car" ToRole="BodyType" />
+    <NavigationProperty Name="DriveType" Relationship="Self.FK_CarDriveType" FromRole="Car" ToRole="DriveType" />
+    <NavigationProperty Name="TransmissionType" Relationship="Self.FK_CarTransmissionType" FromRole="Car" ToRole="TransmissionType" />
+  </EntityType>
+  <EntityType Name="DriveType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriveType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarDriveType" FromRole="DriveType" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="ProgramConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LightTheme" Type="Boolean" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransmissionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransmissionType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarTransmissionType" FromRole="TransmissionType" ToRole="Car" />
+  </EntityType>
+  <Association Name="FK_CarBodyType">
+    <End Role="BodyType" Type="Self.BodyType" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BodyType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="BodyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarDriveType">
+    <End Role="DriveType" Type="Self.DriveType" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriveType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="DriveTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarTransmissionType">
+    <End Role="TransmissionType" Type="Self.TransmissionType" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransmissionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="TransmissionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BodyType" EntityType="Self.BodyType" />
+    <EntitySet Name="Car" EntityType="Self.Car" />
+    <EntitySet Name="DriveType" EntityType="Self.DriveType" />
+    <EntitySet Name="ProgramConfig" EntityType="Self.ProgramConfig" />
+    <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" />
+    <AssociationSet Name="FK_CarBodyType" Association="Self.FK_CarBodyType">
+      <End Role="BodyType" EntitySet="BodyType" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarDriveType" Association="Self.FK_CarDriveType">
+      <End Role="DriveType" EntitySet="DriveType" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarTransmissionType" Association="Self.FK_CarTransmissionType">
+      <End Role="TransmissionType" EntitySet="TransmissionType" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

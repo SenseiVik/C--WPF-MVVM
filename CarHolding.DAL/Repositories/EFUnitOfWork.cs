@@ -29,7 +29,7 @@ namespace CarHolding.DAL.Repositories
         public IRepository<TransmissionType> TransmissionTypes => transmissionType = transmissionType ?? new TransmissionTypeRepository(db);
         #endregion
 
-        public void SaveChanges()
+        public void Save()
         {
             db.SaveChanges();
         }

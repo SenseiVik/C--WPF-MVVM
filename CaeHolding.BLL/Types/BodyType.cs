@@ -8,7 +8,7 @@ namespace CarHolding.BLL.Types
 {
     public enum BodyType
     {
-        Sedan,
+        Sedan = 1,
         Wagon,
         Coupe,
         Hatchback,

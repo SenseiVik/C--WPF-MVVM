@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="BodyType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Cars" Relationship="Self.FK_CarBodyType" FromRole="BodyType" ToRole="Car" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarBodyType" FromRole="BodyType" ToRole="Car" />
   </EntityType>
   <EntityType Name="Car">
     <Key>
@@ -32,7 +32,15 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DriveType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Cars" Relationship="Self.FK_CarDriveType" FromRole="DriveType" ToRole="Car" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarDriveType" FromRole="DriveType" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="ProgramConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LightTheme" Type="Boolean" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="TransmissionType">
     <Key>
@@ -40,7 +48,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TransmissionType1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Cars" Relationship="Self.FK_CarTransmissionType" FromRole="TransmissionType" ToRole="Car" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_CarTransmissionType" FromRole="TransmissionType" ToRole="Car" />
   </EntityType>
   <Association Name="FK_CarBodyType">
     <End Role="BodyType" Type="Self.BodyType" Multiplicity="1" />
@@ -79,21 +87,22 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CarHoldingEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="BodyTypes" EntityType="Self.BodyType" />
-    <EntitySet Name="Cars" EntityType="Self.Car" />
-    <EntitySet Name="DriveTypes" EntityType="Self.DriveType" />
-    <EntitySet Name="TransmissionTypes" EntityType="Self.TransmissionType" />
+    <EntitySet Name="BodyType" EntityType="Self.BodyType" />
+    <EntitySet Name="Car" EntityType="Self.Car" />
+    <EntitySet Name="DriveType" EntityType="Self.DriveType" />
+    <EntitySet Name="ProgramConfig" EntityType="Self.ProgramConfig" />
+    <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" />
     <AssociationSet Name="FK_CarBodyType" Association="Self.FK_CarBodyType">
-      <End Role="BodyType" EntitySet="BodyTypes" />
-      <End Role="Car" EntitySet="Cars" />
+      <End Role="BodyType" EntitySet="BodyType" />
+      <End Role="Car" EntitySet="Car" />
     </AssociationSet>
     <AssociationSet Name="FK_CarDriveType" Association="Self.FK_CarDriveType">
-      <End Role="DriveType" EntitySet="DriveTypes" />
-      <End Role="Car" EntitySet="Cars" />
+      <End Role="DriveType" EntitySet="DriveType" />
+      <End Role="Car" EntitySet="Car" />
     </AssociationSet>
     <AssociationSet Name="FK_CarTransmissionType" Association="Self.FK_CarTransmissionType">
-      <End Role="TransmissionType" EntitySet="TransmissionTypes" />
-      <End Role="Car" EntitySet="Cars" />
+      <End Role="TransmissionType" EntitySet="TransmissionType" />
+      <End Role="Car" EntitySet="Car" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

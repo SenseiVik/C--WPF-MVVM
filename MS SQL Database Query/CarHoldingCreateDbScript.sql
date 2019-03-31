@@ -38,6 +38,13 @@ create table Car
 	constraint FK_CarBodyType foreign key (BodyTypeId) references BodyType(Id)
 );
 go
+create table ProgramConfig
+(
+	Id int primary key identity(1,1),
+	LightTheme bit not null,
+	[Language] varchar(20) not null
+);
+go
 insert into TransmissionType(TransmissionType)
 values	('Automatic'), 
 		('Manual')
@@ -61,3 +68,6 @@ insert into Car(Title, Volume, Color, [Year], Price, ImagePath, TransmissionType
 values	('Honda Accord', 2.4, 'Black', 2011, 24000, '..\Image\hondaAccord.jpg', 2, 1, 1),
 		('Honda HR-V', 3.2, 'DarkRed', 2018, 34000, '..\Image\hondaHRV.jpg', 1, 3, 7),
 		('Honda Civic', 2.0, 'Green', 2017, 27000, '..\Image\hondaCivic.jpg', 2, 1, 3)
+go
+insert into ProgramConfig(LightTheme, [Language])
+values	(1, 'ENG')

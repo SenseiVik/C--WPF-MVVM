@@ -25,9 +25,10 @@ namespace CarHolding.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BodyType> BodyTypes { get; set; }
-        public virtual DbSet<Car> Cars { get; set; }
-        public virtual DbSet<DriveType> DriveTypes { get; set; }
-        public virtual DbSet<TransmissionType> TransmissionTypes { get; set; }
+        public virtual DbSet<BodyType> BodyType { get; set; }
+        public virtual DbSet<Car> Car { get; set; }
+        public virtual DbSet<DriveType> DriveType { get; set; }
+        public virtual DbSet<ProgramConfig> ProgramConfig { get; set; }
+        public virtual DbSet<TransmissionType> TransmissionType { get; set; }
     }
 }

@@ -21,12 +21,35 @@ namespace CaeHolding.BLL.Services
 
         public void CreateOrUpdate(CarDTO value)
         {
-            throw new NotImplementedException();
+            unitOfWork.Cars.CreateOrUpdate(new CarHolding.DAL.Car()
+            {
+                Id = value.Id,
+                Title = value.Title,
+                Color = value.Color,
+                Price = value.Price,
+                ImagePath = value.Image,
+                Volume = value.Volume,
+                Year = value.Year,
+                DriveTypeId = (int)value.Drive,
+                TransmissionTypeId = (int)value.Transmission,
+                BodyTypeId = (int)value.Body
+            });
         }
 
         public CarDTO Get(int id)
         {
-            throw new NotImplementedException();
+            var tmp = unitOfWork.Cars.Get(id);
+
+            return new CarDTO(  tmp.Id, 
+                                tmp.Title, 
+                                tmp.Volume, 
+                                tmp.Year, 
+                                tmp.Price, 
+                                tmp.Color, 
+                                tmp.TransmissionType.TransmissionType1, 
+                                tmp.DriveType.DriveType1, 
+                                tmp.BodyType.BodyType1, 
+                                tmp.ImagePath);
         }
 
         public IEnumerable<CarDTO> GetAll()
@@ -48,7 +71,18 @@ namespace CaeHolding.BLL.Services
 
         public CarDTO GetAt(int index)
         {
-            throw new NotImplementedException();
+            var tmp = unitOfWork.Cars.GetAt(index);
+
+            return new CarDTO(tmp.Id,
+                               tmp.Title,
+                               tmp.Volume,
+                               tmp.Year,
+                               tmp.Price,
+                               tmp.Color,
+                               tmp.TransmissionType.TransmissionType1,
+                               tmp.DriveType.DriveType1,
+                               tmp.BodyType.BodyType1,
+                               tmp.ImagePath);
         }
 
         public void Remove(CarDTO value)
@@ -63,12 +97,9 @@ namespace CaeHolding.BLL.Services
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            unitOfWork.Cars.RemoveAt(index);
         }
 
-        public void SaveChanges()
-        {
-            unitOfWork.SaveChanges();
-        }
+        public void SaveChanges() => unitOfWork.Save();
     }
 }

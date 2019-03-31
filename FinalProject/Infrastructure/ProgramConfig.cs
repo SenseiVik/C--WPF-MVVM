@@ -14,7 +14,6 @@ namespace FinalProject.Infrastructure
     {
         public ObservableCollection<CarDTO> Cars { get; set; }
         public bool LightTheme { get; set; }
-        public int LanguageIndex { get; set; }
         public string Language { get; set; }
 
         public ProgramConfig() { }

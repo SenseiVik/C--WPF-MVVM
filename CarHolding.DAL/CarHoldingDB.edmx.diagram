@@ -4,10 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d586db39410f4ab0b1727277a5f4210a" Name="Diagram1">
+      <Diagram DiagramId="d7fd16fc5ec140d7b0467c9944f1e4da" Name="Diagram1">
         <EntityTypeShape EntityType="CarHoldingModel.BodyType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="CarHoldingModel.Car" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CarHoldingModel.DriveType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarHoldingModel.ProgramConfig" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CarHoldingModel.TransmissionType" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <AssociationConnector Association="CarHoldingModel.FK_CarBodyType" ManuallyRouted="false" />
         <AssociationConnector Association="CarHoldingModel.FK_CarDriveType" ManuallyRouted="false" />

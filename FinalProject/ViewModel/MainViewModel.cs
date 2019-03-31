@@ -77,9 +77,11 @@ namespace FinalProject.ViewModel
 
             Cars = new ObservableCollection<CarDTO>(service.GetAll());
             Language = LanguageManager.GetDictionaryEnglish();
-            Config = new ProgramConfig();
-            Config.Language = "ENG";
-            Config.LightTheme = true;
+            Config = new ProgramConfig
+            {
+                Language = "ENG",
+                LightTheme = true
+            };
         }
 
         private void SaveMethod(object obj)
@@ -164,24 +166,28 @@ namespace FinalProject.ViewModel
 
         private void AppendCarMethod(object parameter)
         {
-            Transfer.SelectedCar = new CarDTO();
+            Transfer.Car = new CarDTO();
             Transfer.Cars = Cars;
             Transfer.Append = true;
 
             CarView carView = new CarView();
+            carView.ShowDialog();
 
-            carView.Show();
+            service.CreateOrUpdate(Transfer.Car);
+            service.SaveChanges();
         }
 
         private void EditCarMethod(object parameter)
         {
-            Transfer.SelectedCar = SelectedCar;
+            Transfer.Car = SelectedCar;
             Transfer.Cars = Cars;
             Transfer.Append = false;
 
             CarView carView = new CarView();
+            carView.ShowDialog();
 
-            carView.Show();
+            service.CreateOrUpdate(SelectedCar);
+            service.SaveChanges();
         }
 
         private void SortMethod(object parameter)

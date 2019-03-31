@@ -19,17 +19,17 @@ namespace CarHolding.DAL.Repositories
 
         ~CarRepository() => db.Dispose();
 
-        public void CreateOrUpdate(Car value) => db.Cars.AddOrUpdate<Car>(value);
+        public void CreateOrUpdate(Car value) => db.Car.AddOrUpdate<Car>(value);
 
-        public Car Get(int id) => db.Cars.Find(id);
+        public Car Get(int id) => db.Car.Find(id);
 
-        public IEnumerable<Car> GetAll() => db.Cars;
+        public IEnumerable<Car> GetAll() => db.Car;
 
         public Car GetAt(int index)
         {
             try
             {
-                return db.Cars.ToList()[index];
+                return db.Car.ToList()[index];
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -37,13 +37,13 @@ namespace CarHolding.DAL.Repositories
             }
         }
 
-        public void Remove(Car value) => db.Cars.Remove(value);
+        public void Remove(Car value) => db.Car.Remove(value);
 
         public void RemoveAt(int index) 
         {
             try
             {
-                db.Cars.ToList().RemoveAt(index);
+                db.Car.ToList().RemoveAt(index);
             }
             catch { }
         }

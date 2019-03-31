@@ -29,6 +29,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DriveType" Type="varchar" MaxLength="45" />
   </EntityType>
+  <EntityType Name="ProgramConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LightTheme" Type="bit" Nullable="false" />
+    <Property Name="Language" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="TransmissionType">
     <Key>
       <PropertyRef Name="Id" />
@@ -76,6 +84,7 @@
     <EntitySet Name="BodyType" EntityType="Self.BodyType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DriveType" EntityType="Self.DriveType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramConfig" EntityType="Self.ProgramConfig" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CarBodyType" Association="Self.FK_CarBodyType">
       <End Role="BodyType" EntitySet="BodyType" />

@@ -8,7 +8,7 @@ namespace CarHolding.BLL.Types
 {
     public enum DriveType
     {
-        FrontWheel,
+        FrontWheel = 1,
         BackWheel,
         Full
     }

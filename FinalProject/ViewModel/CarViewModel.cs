@@ -32,7 +32,7 @@ namespace FinalProject.ViewModel
 
         public CarViewModel()
         {
-            Car = Transfer.SelectedCar.Clone() as CarDTO;
+            Car = Transfer.Car.Clone() as CarDTO;
 
             CancelCommand = new RelayCommand(UserCancel);
             OkCommand = new RelayCommand(UserConfirm);
@@ -41,9 +41,12 @@ namespace FinalProject.ViewModel
         private void UserConfirm(object parameter)
         {
             if (Transfer.Append)
+            {
                 Transfer.Cars.Add(Car);
+                Transfer.Car = Car;
+            }
             else
-                Transfer.Copy(Car, Transfer.SelectedCar);
+                Transfer.Copy(Car, Transfer.Car);
 
             (parameter as Window).Close();
             Transfer.Append = false;

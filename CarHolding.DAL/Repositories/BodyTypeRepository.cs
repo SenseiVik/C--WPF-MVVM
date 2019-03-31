@@ -24,17 +24,17 @@ namespace CarHolding.DAL.Repositories
 
         ~BodyTypeRepository() => db.Dispose();
 
-        public void CreateOrUpdate(BodyType value) => db.BodyTypes.AddOrUpdate(value);
+        public void CreateOrUpdate(BodyType value) => db.BodyType.AddOrUpdate(value);
 
-        public BodyType Get(int id) => db.BodyTypes.Find(id);
+        public BodyType Get(int id) => db.BodyType.Find(id);
 
-        public IEnumerable<BodyType> GetAll() => db.BodyTypes;
+        public IEnumerable<BodyType> GetAll() => db.BodyType;
 
         public BodyType GetAt(int index)
         {
             try
             {
-                return db.BodyTypes.ToList()[index];
+                return db.BodyType.ToList()[index];
             }
             catch (IndexOutOfRangeException ex)
             {
@@ -42,13 +42,13 @@ namespace CarHolding.DAL.Repositories
             }
         }
 
-        public void Remove(BodyType value) => db.BodyTypes.Remove(value);
+        public void Remove(BodyType value) => db.BodyType.Remove(value);
 
         public void RemoveAt(int index)
         {
             try
             {
-                db.BodyTypes.ToList().RemoveAt(index);
+                db.BodyType.ToList().RemoveAt(index);
             }
             catch (IndexOutOfRangeException ex) { }
         }
