@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaeHolding.BLL.Interfaces
+namespace CarHolding.BLL.Interfaces
 {
     public interface IService<T>
     {
@@ -14,6 +14,6 @@ namespace CaeHolding.BLL.Interfaces
         void CreateOrUpdate(T value);
         void Remove(T value);
         void RemoveAt(int index);
-        void SaveChanges();
-    }
+        void Save(IEnumerable<T> value = null);
+    } 
 }

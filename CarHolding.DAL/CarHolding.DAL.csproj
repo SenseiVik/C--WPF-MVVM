@@ -84,6 +84,7 @@
     <Compile Include="Repositories\DriveTypeRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Repositories\EFUnitOfWork.cs" />
+    <Compile Include="Repositories\ProgramConfigRepository.cs" />
     <Compile Include="Repositories\TransmissionTypeRepository.cs" />
     <Compile Include="TransmissionType.cs">
       <DependentUpon>CarHoldingDB.tt</DependentUpon>
@@ -115,5 +116,6 @@
       <LastGenOutput>CarHoldingDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

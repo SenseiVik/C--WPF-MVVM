@@ -1,4 +1,4 @@
-﻿using CaeHolding.BLL.Interfaces;
+﻿using CarHolding.BLL.Interfaces;
 using CarHolding.BLL.DTO;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using CarHolding.DAL.Interfaces;
 using CarHolding.DAL.Repositories;
 
-namespace CaeHolding.BLL.Services
+namespace CarHolding.BLL.Services
 {
     public class MsSqlServerService : IService<CarDTO>
     {
@@ -100,6 +100,9 @@ namespace CaeHolding.BLL.Services
             unitOfWork.Cars.RemoveAt(index);
         }
 
-        public void SaveChanges() => unitOfWork.Save();
+        public void Save(IEnumerable<CarDTO> value = null)
+        {
+            unitOfWork.Save();
+        }
     }
 }

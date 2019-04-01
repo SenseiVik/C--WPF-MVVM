@@ -1,8 +1,7 @@
-﻿using CaeHolding.BLL.Interfaces;
-using CaeHolding.BLL.Services;
+﻿using CarHolding.BLL.Infrastructure;
 using CarHolding.BLL.DTO;
+using CarHolding.BLL.Interfaces;
 using FinalProject.Infrastructure;
-using FinalProject.Model;
 using FinalProject.View;
 using System;
 using System.Collections.Generic;
@@ -25,7 +24,8 @@ namespace FinalProject.ViewModel
         private CarDTO selectedCar;
         private ProgramConfig config;
         private Dictionary<string, string> language;
-        private ILogger logger;
+        private ILogger<ProgramConfig> programConfigLogger;
+        private ILogger<IEnumerable<CarDTO>> logger;
         private IService<CarDTO> service;
 
         #region Commands
@@ -40,10 +40,10 @@ namespace FinalProject.ViewModel
         #endregion
 
         #region Constructor
-        public MainViewModel(ILogger logger)
+        public MainViewModel(IService<CarDTO> service)
         {
-            this.logger = logger;
-            this.service = new MsSqlServerService();
+            this.service = service;
+            this.programConfigLogger = new ProgramConfigJSONLogger();
 
             RemoveCommand = new RelayCommand(RemoveMethod, x => SelectedCar != null);
             ChangeLanguageCommand = new RelayCommand(ChangeLanguageMethod);
@@ -57,37 +57,28 @@ namespace FinalProject.ViewModel
 
         private void LoadMethod(object obj)
         {
-            //ProgramConfig res = logger.Load("data");
+            ProgramConfig res = programConfigLogger.Load("ProgramConfig");
 
-            //if (res != null)
-            //{
-            //    Config = res;
-            //    ChangeLanguageMethod(Config.Language);
-            //    ChangeThemeMethod(Config.LightTheme);
-            //    Cars = Config.Cars;
-            //}
-            //else
-            //{
-            //    //Cars = CarDTO.GetCars();
-            //    Language = LanguageManager.GetDictionaryEnglish();
-            //    Config = new ProgramConfig();
-            //    Config.Language = "ENG";
-            //    Config.LightTheme = true;
-            //}
+            if (res != null)
+            {
+                Config = res;
+                ChangeLanguageMethod(Config.Language);
+                ChangeThemeMethod(Config.LightTheme);
+            }
+            else
+            {
+                Language = LanguageManager.GetDictionaryEnglish();
+                Config = new ProgramConfig();
+                Config.Language = "ENG";
+                Config.LightTheme = true;
+            }
 
             Cars = new ObservableCollection<CarDTO>(service.GetAll());
-            Language = LanguageManager.GetDictionaryEnglish();
-            Config = new ProgramConfig
-            {
-                Language = "ENG",
-                LightTheme = true
-            };
         }
 
         private void SaveMethod(object obj)
         {
-            Config.Cars = Cars;
-            logger.Save("data", Config);
+            programConfigLogger.Save("ProgramConfig", Config);
         }
 
 
@@ -141,7 +132,7 @@ namespace FinalProject.ViewModel
         private void RemoveMethod(object obj)
         {
             service.Remove(SelectedCar);
-            service.SaveChanges();
+            service.Save();
             Cars.Remove(SelectedCar);
         }
 
@@ -174,7 +165,7 @@ namespace FinalProject.ViewModel
             carView.ShowDialog();
 
             service.CreateOrUpdate(Transfer.Car);
-            service.SaveChanges();
+            service.Save();
         }
 
         private void EditCarMethod(object parameter)
@@ -187,7 +178,7 @@ namespace FinalProject.ViewModel
             carView.ShowDialog();
 
             service.CreateOrUpdate(SelectedCar);
-            service.SaveChanges();
+            service.Save();
         }
 
         private void SortMethod(object parameter)
@@ -232,11 +223,13 @@ namespace FinalProject.ViewModel
                 case "ENG":
                     Language = LanguageManager.GetDictionaryEnglish();
                     Config.Language = "ENG";
+                    Config.SelectedLanguageIndex = 0;
                     break;
 
                 case "RUS":
                     Language = LanguageManager.GetDictionaryRussian();
                     Config.Language = "RUS";
+                    Config.SelectedLanguageIndex = 1;
                     break;
             }
         }

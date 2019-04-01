@@ -14,6 +14,7 @@ namespace CarHolding.DAL.Repositories
         private IRepository<BodyType> bodyTypes;
         private IRepository<DriveType> driveTypes;
         private IRepository<TransmissionType> transmissionType;
+        private IRepository<ProgramConfig> programConfig;
 
         #region Constructor
         public EFUnitOfWork()
@@ -27,6 +28,7 @@ namespace CarHolding.DAL.Repositories
         public IRepository<BodyType> BodyTypes => bodyTypes = bodyTypes ?? new BodyTypeRepository(db);
         public IRepository<DriveType> DriveTypes => driveTypes = driveTypes ?? new DriveTypeRepository(db);
         public IRepository<TransmissionType> TransmissionTypes => transmissionType = transmissionType ?? new TransmissionTypeRepository(db);
+        public IRepository<ProgramConfig> ProgramConfig => programConfig = programConfig ?? new ProgramConfigRepository(db);
         #endregion
 
         public void Save()

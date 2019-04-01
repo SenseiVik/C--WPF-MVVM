@@ -22,3 +22,8 @@ C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.
 C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CarHolding.BLL.csproj.CopyComplete
 C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.dll
 C:\Users\Сирик\Desktop\C--WPF-MVVM\CaeHolding.BLL\obj\Debug\CaeHolding.BLL.pdb
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\Ninject.dll
+C:\Users\Admin\Desktop\C--WPF-MVVM\CaeHolding.BLL\bin\Debug\Ninject.xml

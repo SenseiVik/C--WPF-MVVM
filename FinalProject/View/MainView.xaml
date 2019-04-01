@@ -91,7 +91,7 @@
 						  Margin="5" 
 						  HorizontalContentAlignment="Center"
 						  FontSize="18"
-						  SelectedIndex="{Binding Config.LanguageIndex}"
+						  SelectedIndex="{Binding Config.SelectedLanguageIndex}"
 						  x:Name="language">
 
 					<interactivity1:Interaction.Triggers>

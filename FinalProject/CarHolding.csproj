@@ -103,19 +103,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Infrastructure\ComboBoxEnum.cs" />
-    <Compile Include="Infrastructure\DImodule.cs" />
     <Compile Include="Infrastructure\LanguageManager.cs" />
     <Compile Include="Infrastructure\MainViewModelLocator.cs" />
-    <Compile Include="Infrastructure\ProgramConfig.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="Infrastructure\Transfer.cs" />
     <Compile Include="Infrastructure\Theme.cs" />
     <Compile Include="Infrastructure\Validator\DoubleValidatorRule.cs" />
     <Compile Include="Infrastructure\Validator\ColorValidatorRule.cs" />
     <Compile Include="Infrastructure\Validator\IntegerValidatorRule.cs" />
-    <Compile Include="Model\ILogger.cs" />
-    <Compile Include="Model\JSONLogger.cs" />
-    <Compile Include="Model\XMLogger.cs" />
     <Compile Include="ViewModel\CarViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\CarView.xaml.cs">
@@ -201,6 +196,10 @@
       <Project>{94b0b82e-b50b-4c4b-97ed-109b40f1a45b}</Project>
       <Name>CarHolding.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

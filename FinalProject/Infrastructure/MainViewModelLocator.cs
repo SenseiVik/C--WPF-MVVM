@@ -1,4 +1,5 @@
-﻿using FinalProject.ViewModel;
+﻿using CarHolding.BLL.DiModules;
+using FinalProject.ViewModel;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace FinalProject.Infrastructure
 
         public MainViewModelLocator()
         {
-            kernel = new StandardKernel(new DImodule()); //DIMODULE
+            // Just use DiModules
+            kernel = new StandardKernel(new MsSqlDiModule()); 
         }
 
         public MainViewModel MainViewModel
