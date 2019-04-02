@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,11 @@ namespace CarHolding.BLL.Infrastructure
 {
     public class CarXMLogger : ILogger<IEnumerable<CarDTO>>
     {
-        private XmlSerializer xml = new XmlSerializer(typeof(ProgramConfig));
+        private XmlSerializer xml;
 
         public CarXMLogger()
         {
-            xml = new XmlSerializer(typeof(ProgramConfig));
+            xml = new XmlSerializer(typeof(ObservableCollection<CarDTO>));
         }
 
         public IEnumerable<CarDTO> Load(string path)
@@ -30,14 +31,14 @@ namespace CarHolding.BLL.Infrastructure
             {
                 object obj = xml.Deserialize(fs);
 
-                if (obj is ProgramConfig)
+                if (obj is IEnumerable<CarDTO>)
                     return obj as IEnumerable<CarDTO>;
                 else
                     return null;
             }
         }
 
-        public void Save(string path, IEnumerable<CarDTO> value)
+        public void Save(string path, IEnumerable<CarDTO> value = null)
         {
             path += ".xml";
 

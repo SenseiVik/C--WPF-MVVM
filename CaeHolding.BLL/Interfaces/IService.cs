@@ -11,7 +11,7 @@ namespace CarHolding.BLL.Interfaces
         IEnumerable<T> GetAll();
         T Get(int id);
         T GetAt(int index);
-        void CreateOrUpdate(T value);
+        void CreateOrUpdate(T value, IEnumerable<T> collection = null);
         void Remove(T value);
         void RemoveAt(int index);
         void Save(IEnumerable<T> value = null);

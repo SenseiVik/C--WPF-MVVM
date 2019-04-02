@@ -19,7 +19,7 @@ namespace CarHolding.BLL.Services
             unitOfWork = new EFUnitOfWork();
         }
 
-        public void CreateOrUpdate(CarDTO value)
+        public void CreateOrUpdate(CarDTO value, IEnumerable<CarDTO> collection = null)
         {
             unitOfWork.Cars.CreateOrUpdate(new CarHolding.DAL.Car()
             {

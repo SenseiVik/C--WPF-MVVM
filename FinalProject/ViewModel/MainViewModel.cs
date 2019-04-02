@@ -25,7 +25,6 @@ namespace FinalProject.ViewModel
         private ProgramConfig config;
         private Dictionary<string, string> language;
         private ILogger<ProgramConfig> programConfigLogger;
-        private ILogger<IEnumerable<CarDTO>> logger;
         private IService<CarDTO> service;
 
         #region Commands
@@ -73,12 +72,14 @@ namespace FinalProject.ViewModel
                 Config.LightTheme = true;
             }
 
-            Cars = new ObservableCollection<CarDTO>(service.GetAll());
+            var tmp = service.GetAll();
+            Cars = tmp != null ? new ObservableCollection<CarDTO>(tmp) : new ObservableCollection<CarDTO>();
         }
 
         private void SaveMethod(object obj)
         {
             programConfigLogger.Save("ProgramConfig", Config);
+            service.Save(Cars);
         }
 
 
@@ -164,7 +165,7 @@ namespace FinalProject.ViewModel
             CarView carView = new CarView();
             carView.ShowDialog();
 
-            service.CreateOrUpdate(Transfer.Car);
+            service.CreateOrUpdate(Transfer.Car, Cars);
             service.Save();
         }
 
@@ -177,7 +178,7 @@ namespace FinalProject.ViewModel
             CarView carView = new CarView();
             carView.ShowDialog();
 
-            service.CreateOrUpdate(SelectedCar);
+            service.CreateOrUpdate(SelectedCar, Cars);
             service.Save();
         }
 

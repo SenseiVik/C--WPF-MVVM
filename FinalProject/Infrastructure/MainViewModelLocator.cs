@@ -16,7 +16,7 @@ namespace FinalProject.Infrastructure
         public MainViewModelLocator()
         {
             // Just use DiModules
-            kernel = new StandardKernel(new MsSqlDiModule()); 
+            kernel = new StandardKernel(new JsonDiModule()); 
         }
 
         public MainViewModel MainViewModel

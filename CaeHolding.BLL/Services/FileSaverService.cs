@@ -17,14 +17,14 @@ namespace CarHolding.BLL.Services
             this.logger = logger;
         }
 
-        public void CreateOrUpdate(CarDTO value)
+        public void CreateOrUpdate(CarDTO value, IEnumerable<CarDTO> collection = null)
         {
-            throw new NotImplementedException();
+            this.logger.Save("data", collection);
         }
 
         public CarDTO Get(int id)
         {
-            throw new NotImplementedException();
+            return logger.Load("data").FirstOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<CarDTO> GetAll()
@@ -34,17 +34,26 @@ namespace CarHolding.BLL.Services
 
         public CarDTO GetAt(int index)
         {
-            throw new NotImplementedException();
+            return logger.Load("data").ToList()[index];
         }
 
         public void Remove(CarDTO value)
         {
-            throw new NotImplementedException();
+            //var tmp = Get(value.Id);
+
+            //if (tmp != null)
+            //{
+            //    var collection = logger.Load("data").ToList();
+            //    collection.Remove(tmp);
+            //    logger.Save("data", collection);
+            //}
         }
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            var collection = logger.Load("data").ToList();
+            collection.RemoveAt(index);
+            logger.Save("data", collection);
         }
 
         public void Save(IEnumerable<CarDTO> value = null)

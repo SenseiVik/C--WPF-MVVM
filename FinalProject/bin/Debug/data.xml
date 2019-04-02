@@ -1,41 +1,27 @@
 <?xml version="1.0"?>
-<ProgramConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Cars>
-    <Car>
-      <Title>Honda Accord</Title>
-      <Color>Black</Color>
-      <Volume>2.4</Volume>
-      <Year>2011</Year>
-      <Price>24000</Price>
-      <Transmission>Manual</Transmission>
-      <Drive>FrontWheel</Drive>
-      <Body>Sedan</Body>
-      <Image>..\Image\hondaAccord.jpg</Image>
-    </Car>
-    <Car>
-      <Title>Honda Civic</Title>
-      <Color>Green</Color>
-      <Volume>2</Volume>
-      <Year>2017</Year>
-      <Price>27000</Price>
-      <Transmission>Manual</Transmission>
-      <Drive>FrontWheel</Drive>
-      <Body>Coupe</Body>
-      <Image>..\Image\hondaCivic.jpg</Image>
-    </Car>
-  </Cars>
-  <LightTheme>true</LightTheme>
-  <LanguageIndex>0</LanguageIndex>
-  <Language>ENG</Language>
-</ProgramConfig>
-      <Price>27000</Price>
-      <Transmission>Manual</Transmission>
-      <Drive>FrontWheel</Drive>
-      <Body>Coupe</Body>
-      <Image>..\Image\hondaCivic.jpg</Image>
-    </Car>
-  </Cars>
-  <LightTheme>true</LightTheme>
-  <LanguageIndex>0</LanguageIndex>
-  <Language>ENG</Language>
-</ProgramConfig>
+<ArrayOfCarDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CarDTO>
+    <Title>None</Title>
+    <Color>None</Color>
+    <Volume>0</Volume>
+    <Year>0</Year>
+    <Price>0</Price>
+    <Transmission>Automatic</Transmission>
+    <Drive>BackWheel</Drive>
+    <Body>Coupe</Body>
+    <Image>..\Icon\car.png</Image>
+    <Id>0</Id>
+  </CarDTO>
+  <CarDTO>
+    <Title>kek</Title>
+    <Color>None</Color>
+    <Volume>0</Volume>
+    <Year>0</Year>
+    <Price>0</Price>
+    <Transmission>Automatic</Transmission>
+    <Drive>BackWheel</Drive>
+    <Body>Coupe</Body>
+    <Image>..\Icon\car.png</Image>
+    <Id>0</Id>
+  </CarDTO>
+</ArrayOfCarDTO>>

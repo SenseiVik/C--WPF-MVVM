@@ -1,42 +1,14 @@
-{
-  "Cars": [
-    {
-      "Title": "Honda HR-V",
-      "Color": "DarkRed",
-      "Volume": 3.2,
-      "Year": 2018,
-      "Price": 34000,
-      "Transmission": 1,
-      "Drive": 3,
-      "Body": 7,
-      "Image": "..\\Image\\hondaHRV.jpg",
-      "Id": 2
-    },
-    {
-      "Title": "Honda Civic",
-      "Color": "Green",
-      "Volume": 2.0,
-      "Year": 2017,
-      "Price": 43000,
-      "Transmission": 2,
-      "Drive": 1,
-      "Body": 3,
-      "Image": "..\\Image\\hondaCivic.jpg",
-      "Id": 3
-    },
-    {
-      "Title": "Honda Bayan",
-      "Color": "Black",
-      "Volume": 2.4,
-      "Year": 2011,
-      "Price": 24000,
-      "Transmission": 2,
-      "Drive": 1,
-      "Body": 1,
-      "Image": "..\\Image\\hondaAccord.jpg",
-      "Id": 9
-    }
-  ],
-  "LightTheme": true,
-  "Language": "ENG"
-}
+[
+  {
+    "Title": "Car1",
+    "Color": "None",
+    "Volume": 0.0,
+    "Year": 0,
+    "Price": 0,
+    "Transmission": 1,
+    "Drive": 2,
+    "Body": 3,
+    "Image": "..\\Icon\\car.png",
+    "Id": 0
+  }
+]

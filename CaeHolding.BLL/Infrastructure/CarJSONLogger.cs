@@ -23,7 +23,7 @@ namespace CarHolding.BLL.Infrastructure
             return JsonConvert.DeserializeObject<IEnumerable<CarDTO>>(json);
         }
 
-        public void Save(string path, IEnumerable<CarDTO> value)
+        public void Save(string path, IEnumerable<CarDTO> value = null)
         {
             path += ".json";
 
